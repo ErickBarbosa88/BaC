@@ -9,7 +9,3 @@ function NumberList(props) {
   }
 
   export default NumberList
-  
- 
-    
-  
