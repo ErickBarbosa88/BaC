@@ -60,11 +60,15 @@ function App() {
         </div>
       )}
       {mostrardiv && (
+        <div className="App0">
         <div className="App2">
           <label>Tente acertar a senha</label>
           <input type="text" value={texto2} onChange={handleChange2} />
           <button onClick={handleClickBtInserir}>Inserir</button>
-          <NumberList textos={textos} texto={texto2} />
+        </div>
+        <div className="App3">
+        <NumberList textos={textos} texto={texto2} />
+        </div>
         </div>
       )}
       {correto && (
