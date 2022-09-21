@@ -1,7 +1,6 @@
 import React, { useState } from "react";
+import EstaCorreto from "./component/EstaCorreto";
 import NumberList from "./component/tentativas";
-
-
 
 function getInput(secret, guess) {
   var bulls = 0;
@@ -51,20 +50,20 @@ function App() {
     setTexto2(event.target.value);
   }
   return (
-    <div className="App">
+    <div className="App-container d-flex flex-column justify-content-center align-self-center">
       {esconderdiv && (
-        <div className="App1">
+        <div className="App1 d-flex flex-column justify-content-center align-self-center">
           <label>Insira a senha</label>
           <input type="text" value={texto} onChange={handleChange} />
-          <button onClick={handleClickBtInserir}>Inserir</button>
+          <button onClick={handleClickBtInserir} type="button" class="btn btn-primary">Inserir</button>
         </div>
       )}
       {mostrardiv && (
-        <div className="App0">
-        <div className="App2">
+        <div className="App0 d-flex flex-column justify-content-center align-self-center">
+        <div className="App2 d-flex flex-column justify-content-center align-self-center">
           <label>Tente acertar a senha</label>
           <input type="text" value={texto2} onChange={handleChange2} />
-          <button onClick={handleClickBtInserir}>Inserir</button>
+          <button onClick={handleClickBtInserir} type="button" class="btn btn-primary">Inserir</button>
         </div>
         <div className="App3">
         <NumberList textos={textos} texto={texto2} />
@@ -72,9 +71,7 @@ function App() {
         </div>
       )}
       {correto && (
-        <div>
-          <h2>Parabéns!! Você acertou.</h2>
-        </div>
+        <EstaCorreto />
       )}
     </div>
   );
